@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+        name: {{ .Values.apisix.name }}-deployment
+        namespace: {{ .Values.namespace }}
+        annotations:
+          configmap.reloader.stakater.com/reload: "apisix-configmap"
+spec:
+        replicas: {{ .Values.apisix.replica }}
+        selector:
+                matchLabels:
+                        app: {{ .Values.apisix.name }}
+        template:
+                metadata:
+                        labels:
+                                app: {{ .Values.apisix.name }}
+                spec:
+                        containers:
+                                - name: {{ .Values.apisix.name }}
+                                  image: {{ .Values.apisix.image.name }}:{{ .Values.apisix.image.tag }}
+                                  imagePullPolicy: "IfNotPresent"
+                                  ports:
+                                          - containerPort: 9080
+                                            #- containerPort: 9443
+                                  volumeMounts:
+                                          - name: config-volume
+                                            mountPath: "/usr/local/apisix/conf/config.yaml"
+                                            subPath: "config.yaml"
+                                          - name: apisix-volume
+                                            mountPath: "/usr/local/apisix/conf/apisix.yaml"
+                                            subPath: "apisix.yaml"
+                        volumes:
+                                - name: config-volume
+                                  configMap:
+                                          name: {{ .Values.apisix.name }}-configmap
+                                          items:
+                                                  - key: "config.yaml"
+                                                    path: "config.yaml"
+                                - name: apisix-volume
+                                  configMap:
+                                          name: {{ .Values.apisix.name }}-configmap
+                                          items:
+                                                  - key: "apisix.yaml"
+                                                    path: "apisix.yaml"

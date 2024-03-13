@@ -1,0 +1,49 @@
+namespace: akka
+app: identity
+
+dbName: keycloak-db
+
+imagePullSecrets:
+  - name: regcred
+nameOverride: ""
+fullnameOverride: "identity-api"
+
+keycloak:
+        name: keycloak
+        replica: 1
+        image:
+                name: 5gmeta/identity-api
+                tag: 1.1
+        port: 8080
+
+postgres:
+        name: postgres
+        replica: 1
+        image:
+                name: postgres
+                tag: 14
+        volume:
+                size: 5Gi
+        pod: postgres-0
+
+secrets:
+        keycloak:
+                username: <user>          # keycloak
+                password: <password>      # keycloak-pw
+        db:
+                username: <user>          # keycloak
+                password: <password>      # keycloak-pw
+
+ingress:
+        enabled: true
+        className: ""
+        annotations:
+                kubernetes.io/ingress.class: alb
+                alb.ingress.kubernetes.io/scheme: internet-facing
+                alb.ingress.kubernetes.io/target-type: ip
+                alb.ingress.kubernetes.io/group.name: "5gmeta-ingress"
+                alb.ingress.kubernetes.io/group.order: '1000'
+        hosts:
+                - paths:
+                        - path: /identity/
+                          pathType: Prefix

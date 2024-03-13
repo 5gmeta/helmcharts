@@ -1,0 +1,170 @@
+apiVersion: v1
+entries:
+  citsanonymizator-chart:
+  - apiVersion: v2
+    appVersion: 1.1.1
+    created: "2024-03-13T13:24:33.125459833+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 91d558b3e71b4d6368543e1c398b528159657a0f739b8bfa51f06d671e79f22c
+    name: citsanonymizator-chart
+    type: application
+    urls:
+    - citsanonymizator-chart-0.1.0.tgz
+    version: 0.1.0
+  cloudinstanceapi-chart:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-03-13T13:24:33.126585345+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 9db76ecd92ab65216c8c714654bed610aeab6303d3bb80532149e0d82bed3aab
+    name: cloudinstanceapi-chart
+    type: application
+    urls:
+    - cloudinstanceapi-chart-0.1.0.tgz
+    version: 0.1.0
+  dataflowapi-chart:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-03-13T13:24:33.12751077+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 3aebf72ea0ae4334ebc7c6a2c18c61dac71a7c8f350d6893c2361060796c8691
+    name: dataflowapi-chart
+    type: application
+    urls:
+    - dataflowapi-chart-0.1.0.tgz
+    version: 0.1.0
+  discoveryapi-chart:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-03-13T13:24:33.128457809+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 591738faace9fc8a37b54818c7b8bb3d3acc1d7bf4dd8f83024ebe05bcd40b42
+    name: discoveryapi-chart
+    type: application
+    urls:
+    - discoveryapi-chart-0.1.0.tgz
+    version: 0.1.0
+  edgeinstanceapi-chart:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-03-13T13:24:33.129384754+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 375c18402de4d419aeb04352b8ca12a3b5f0b0b39a167fe3097decef4e3426fd
+    name: edgeinstanceapi-chart
+    type: application
+    urls:
+    - edgeinstanceapi-chart-0.1.0.tgz
+    version: 0.1.0
+  gateway-standalone:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-03-13T13:24:33.13030021+01:00"
+    description: A Helm chart for deploying the Gateway component to the 5GMETA platform
+      on Amazon EKS
+    digest: 1ab2285874104e08721337e850e9123a5aca3457e0ed1845a53afa9dd9baf9c0
+    name: gateway-standalone
+    type: application
+    urls:
+    - gateway-standalone-1.0.0.tgz
+    version: 1.0.0
+  helloworld-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-03-13T13:24:33.131143746+01:00"
+    description: A Helm chart for doing a Hello World in 5GMETA's infrastructures.
+    digest: 8c494e90d4b95b868ea5ea2ede244ff45a165231111cfa0abcc870bf698c7f8b
+    name: helloworld-chart
+    type: application
+    urls:
+    - helloworld-chart-0.1.0.tgz
+    version: 0.1.0
+  identity:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-03-13T13:24:33.132209413+01:00"
+    description: A Helm chart for deploying the Identity component to the 5GMETA platform
+      on Amazon EKS
+    digest: 191ec2b3d096d0cb4140dddbebb99834ab442b0edea5ccd5b9ba39424f1c29d2
+    name: identity
+    type: application
+    urls:
+    - identity-1.0.0.tgz
+    version: 1.0.0
+  imageanonymizator-chart:
+  - apiVersion: v2
+    appVersion: "1.1"
+    created: "2024-03-13T13:24:33.13316228+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 0b1bd7e66d727bab0f9bba787220f035104431853fa2f588bd979b99ffcbc0a1
+    name: imageanonymizator-chart
+    type: application
+    urls:
+    - imageanonymizator-chart-0.1.0.tgz
+    version: 0.1.0
+  licenseapi:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-03-13T13:24:33.133958981+01:00"
+    description: A Helm chart for Kubernetes
+    digest: dd24c763c3ec6e151fcf1016cf47db9ebc614ecca40b8309d4013852c0e4c9b4
+    name: licenseapi
+    type: application
+    urls:
+    - licenseapi-0.1.0.tgz
+    version: 0.1.0
+  llccam:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-03-13T13:24:33.134855685+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 3cc169591ce8b9b3ee0af7c32f87de1d77e2b82abac0f01f1eefb3f567bd1600
+    name: llccam
+    type: application
+    urls:
+    - llccam-0.1.0.tgz
+    version: 0.1.0
+  messagebroker-chart:
+  - apiVersion: v2
+    appVersion: 5.15.16_dev
+    created: "2024-03-13T13:24:33.136219054+01:00"
+    description: A Helm chart for 5GMETA's Message Broker.
+    digest: 46eb1e7b56399c6296eb6e6842aa8921ae472efbc45ef4babf3abfc23f53fcc3
+    name: messagebroker-chart
+    type: application
+    urls:
+    - messagebroker-chart-0.1.0.tgz
+    version: 0.1.0
+  registrationapi-chart:
+  - apiVersion: v2
+    appVersion: new
+    created: "2024-03-13T13:24:33.137203474+01:00"
+    description: A Helm chart for Kubernetes
+    digest: a93cbc90367651f8dd4208d92bd06235baf56e37eb9a47efb25172add823eb19
+    name: registrationapi-chart
+    type: application
+    urls:
+    - registrationapi-chart-0.1.0.tgz
+    version: 0.1.0
+  videoanonymizator-chart:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-03-13T13:24:33.138155779+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 100d42306782109873b2831774e9b372fd499db0ae117e416841f8edf613e78e
+    name: videoanonymizator-chart
+    type: application
+    urls:
+    - videoanonymizator-chart-0.1.0.tgz
+    version: 0.1.0
+  videobroker-chart:
+  - apiVersion: v2
+    appVersion: "1.2"
+    created: "2024-03-13T13:24:33.139026776+01:00"
+    description: A Helm chart for Kubernetes
+    digest: 2dea370543e02bb2c30bc0db1054ace53d1ab1f51195d38c8361cca9b8034b4b
+    name: videobroker-chart
+    type: application
+    urls:
+    - videobroker-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-03-13T13:24:33.12355002+01:00"

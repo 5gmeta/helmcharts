@@ -1,0 +1,10 @@
+title HELM Charts
+participant Cloud Instance API as api
+participant MEC pipelines\n(OSM\&K8s) as mec
+participant VNF Descriptor as vnf
+participant HELM Charts as helm
+
+api->mec: Do container download, signature check and deploy \n according to resources from \n <instance type>
+mec->vnf: Load descriptor to deploy\nat OSM from Github
+mec->helm: Run HELM to deploy\nat K8s from DockerHub
+mec->mec: Run data pipeline and monitor activity

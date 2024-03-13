@@ -1,0 +1,35 @@
+namespace: akka
+app: license-api
+
+dbName: license-database
+
+licence:
+  name: license
+  replicas: 1
+  image:
+    name: 5gmeta/license-api
+    tag: eks
+
+mongodb:
+    name: mongodb
+    replica: 1
+    image:
+      name: mongo
+      tag: latest
+    volume:
+      size: 5Gi
+    pod: mongodb-0
+
+ingress:
+        enabled: true
+        className: ""
+        annotations:
+                kubernetes.io/ingress.class: alb
+                alb.ingress.kubernetes.io/scheme: internet-facing
+                alb.ingress.kubernetes.io/target-type: ip
+                alb.ingress.kubernetes.io/group.name: "5gmeta-ingress"
+                
+        hosts:
+                - paths:
+                        - path: /license-api
+                          pathType: Prefix

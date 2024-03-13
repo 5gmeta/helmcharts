@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+        name: {{ .Values.apisix.name }}-configmap
+        labels:
+                app: {{ .Values.apisix.name }}
+        namespace: {{ .Values.namespace }}
+data:
+        config.yaml: |
+                apisix:
+                        enable_admin: false
+                        config_center: yaml
+                nginx_config:
+                        http_configuration_snippet: |
+                              proxy_buffer_size 128k;
+                              proxy_buffers 32 128k;
+                              proxy_busy_buffers_size 128k;
+                        http_server_configuration_snippet: |
+                              proxy_buffer_size 128k;
+                              proxy_buffers 32 128k;
+                              proxy_busy_buffers_size 128k;
+                #END
+        apisix.yaml: |
+                {{ .Files.Get "routes.yml" | nindent 16 }}

@@ -1,0 +1,29 @@
+namespace: akka
+app: gateway
+
+apisix:
+        name: apisix
+        replica: 1
+        image:
+                name: apache/apisix
+                tag: 2.13.0-alpine
+        port: 9080
+
+ingress:
+        enabled: true
+        className: ""
+        annotations:
+                kubernetes.io/ingress.class: alb
+                alb.ingress.kubernetes.io/scheme: internet-facing
+                alb.ingress.kubernetes.io/target-type: ip
+                alb.ingress.kubernetes.io/group.name: "5gmeta-ingress"
+                alb.ingress.kubernetes.io/group.order: '1000'
+                alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-west-3:<idaws>:certificate/<password>
+                alb.ingress.kubernetes.io/security-groups: sg-06755943a0511d718,sg-0c40f07c2fcafd64c
+                alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
+                alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+        hosts:
+                - paths:
+                        - path: /
+                          pathType: Prefix
+

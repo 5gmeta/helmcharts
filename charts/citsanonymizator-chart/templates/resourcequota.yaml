@@ -1,0 +1,15 @@
+{{- if eq .Values.quota.enabled true }}
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: {{ include "citsanonymizator-chart.fullname" . }}
+  labels:
+    {{- include "citsanonymizator-chart.labels" . | nindent 4 }}
+spec:
+  hard:
+    requests.cpu: {{ .Values.quota.requests.cpu }}
+    requests.memory: {{ .Values.quota.requests.memory }}
+    requests.nvidia.com/gpu: {{ index .Values.quota.requests "nvidia.com/gpu" }}
+    limits.cpu: {{ .Values.quota.limits.cpu }}
+    limits.memory: {{ .Values.quota.limits.memory }}
+{{- end }}
